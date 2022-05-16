@@ -1,6 +1,7 @@
 package com.example.firstproject.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
@@ -15,6 +16,7 @@ import javax.persistence.Id;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor//Default 생성자추가
+@Getter
 public class Article {
 
     @Id// id값을 넣어줌
@@ -24,5 +26,4 @@ public class Article {
     private String title;
     @Column
     private String content;
-
 }
