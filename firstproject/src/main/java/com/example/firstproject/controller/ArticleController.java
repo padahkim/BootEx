@@ -59,4 +59,15 @@ public class ArticleController {
         // 3: setting view page
         return "articles/index";
     }
+
+    @GetMapping("/articles/{id}/edit")
+    public String edit(@PathVariable Long id, Model model) {
+        // bringing edit data
+        Article articleEntity = articleRepository.findById(id).orElse(null);
+
+        // enroll data to model
+        model.addAttribute("article", articleEntity);
+        // view page setting
+        return"articles/edit";
+    }
 }
