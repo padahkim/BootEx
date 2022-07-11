@@ -6,20 +6,19 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DataJpaTest //JPA와 연동한 테스트
+@DataJpaTest //리파지토리를 테스트 하는것이므로, JPA와 연동한 테스트
 class CommentRepositoryTest {
-
     @Autowired CommentRepository commentRepository;
 
     //DiaplayName 이 테스트를 어떻게 보여줄거냐(테스트 결과에 보여줄 이름)
     @Test
+    //테스트 결과에 보여줄 이름
     @DisplayName("특정 게시글의 모든 댓글 조회")
     void findByArticleId() {
         /* Case 1: 4번 게시글의 모든 댓글 조회*/
@@ -61,7 +60,6 @@ class CommentRepositoryTest {
             // 예상하기
 
             // 검증
-
 
             /* Case 2: "Kim"의 모든 댓글 조회*/
             /* Case 3: null의 모든 댓글 조회*/
